@@ -1,0 +1,137 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(270deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb, #fbc7b1);
+  background-size: 1000% 1000%;
+  margin: 0;
+  padding: 0;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+    animation-timing-function: ease-in;
+  }
+  25% {
+    background-position: 50% 50%;
+    animation-timing-function: ease-out;
+  }
+  50% {
+    background-position: 100% 50%;
+    animation-timing-function: ease-in-out;
+  }
+  75% {
+    background-position: 50% 50%;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.main-title {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  color: #222;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+/* Botón centrado y estilizado */
+.nav-bar {
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.button-link {
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  background-color: #ffffffcc;
+  color: #20232a;
+  border: 2px solid #61dafb;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.button-link:hover {
+  background-color: #61dafb;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #333;
+  padding: 1rem;
+  border-radius: 16px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, opacity 1s ease;
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.75rem;
+}
+
+.card h5 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: none;
+}
+
+.card p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

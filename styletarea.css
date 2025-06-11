@@ -1,0 +1,200 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #e6f2ef, #cde6db, #f9f4ec, #ffe6e6);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 900px;
+    width: 100%;
+}
+
+.panel {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.panel h2 {
+    color: #00796b;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Input + boton container */
+.row-input-boton {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+#input {
+    flex: 1;
+    height: 45px;
+    font-size: 16px;
+    padding: 0 15px;
+    border: 2px solid #cde6db;
+    border-radius: 12px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+#input:focus {
+    outline: none;
+    border-color: #00796b;
+    box-shadow: 0 0 6px #00796baa;
+}
+
+#boton {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    padding: 0 25px;
+    height: 45px;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+}
+
+#boton:hover {
+    background-color: #004d40;
+    box-shadow: 0 4px 12px #004d40aa;
+}
+
+.tarea {
+    background-color: #e0f2f1;
+    padding: 12px 20px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    cursor: default;
+    flex-direction: column;
+}
+
+.tarea:hover {
+    background-color: #b2dfdb;
+}
+
+.tarea > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.tarea button {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 6px 14px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 15px;
+    flex-shrink: 0;
+}
+
+.tarea button:hover {
+    background-color: #004d40;
+    box-shadow: 0 4px 12px #004d40aa;
+}
+
+.btn-completadas {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: auto;
+    align-self: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn-completadas:hover {
+    background-color: #004d40;
+}
+
+/* Cambiamos el color de tarea completada a gris con animación */
+.tarea.completada {
+    background-color: #e0e0e0;
+    color: #616161;
+    cursor: default;
+    opacity: 0;
+    transform: translateX(20px);
+    animation: fadeInMove 0.5s forwards;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tarea.completada button {
+    display: none;
+}
+
+.tarea-completada-msg {
+    background-color: #f0f0f0;
+    color: #d32f2f;
+    font-size: 14px;
+    padding: 4px 10px;
+    border-radius: 8px;
+    margin-left: 15px;
+    white-space: nowrap;
+    font-style: normal;
+}
+
+@keyframes fadeInMove {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* BOTÓN VOLVER AL FINAL */
+.volver-container {
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+    grid-column: span 2;
+}
+
+.volver-boton {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.volver-boton:hover {
+    background-color: #004d40;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
